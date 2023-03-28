@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d2594eb-d96d-4ef1-9a9b-42e526160a8a" name="Changes" comment="" />
+    <list default="true" id="4d2594eb-d96d-4ef1-9a9b-42e526160a8a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySQL_lessons_resolves.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txts/lesson_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txts/lesson_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txts/resolves_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/txts/resolves_2.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +31,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -32,7 +46,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680028400486</updated>
+      <workItem from="1680028401690" duration="302000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -1,0 +1,184 @@
+# 1. Найти всех клиентов, чье имя меньше 6 символов
+select *
+from client where length(FirstName) < 6;
+
+# 2. Выбрать львовские отделения банка.
+select * from department where DepartmentCity = 'Lviv';
+
+# 3. Выбрать клиентов с высшим образованием и по сортировать их по фамилии.
+select *from client where Education ='high' order by LastName;
+
+# 4. Выполнить сортировку в обратном порядке над таблицей Заявка и вывести 5 последних записи.
+select * from application order by idApplication desc limit 5;
+
+# 5. Вывести всех клиентов, чья фамилия заканчивается на OV или OVA.
+select *
+from client where LastName like '%OV' or LastName like '%OVA';
+
+# 6. Вывести клиентов банка, которые обслуживаются киевскими отделениями.
+select * from client join department d on d.idDepartment = client.Department_idDepartment
+         where DepartmentCity = 'Kyiv';
+
+
+# 7. Найти все имена клиентов без повторов.
+select distinct FirstName from client;
+
+# 8. Вывести данные про клиентов, которые имеют кредиты больше чем 5000 гривен.
+select  client.*
+from client join application a on client.idClient = a.Client_idClient
+where Sum > 5000 and  Currency = 'Gryvnia';
+
+
+# 9. Посчитать количество клиентов всех отделений и только львовских отделений.
+select count(*) as count,DepartmentCity from client join  department d on d.idDepartment = client.Department_idDepartment group by DepartmentCity;
+
+select count(*) as count, DepartmentCity from client join department d on d.idDepartment = client.Department_idDepartment where DepartmentCity='Lviv' group by DepartmentCity;
+
+
+
+# 10. Найти кредиты, которые имеют самую большую сумму для каждого клиента отдельно.
+select max(Sum) as sum, client.* from client join application a on client.idClient = a.Client_idClient group by idClient, FirstName, LastName;
+#
+# 11. Посчитать количество заявок на кредит для каждого клиента.
+select count(Sum) as count, FirstName
+from application join client c on c.idClient = application.Client_idClient
+group by  FirstName;
+
+select count(*), idClient, FirstName, LastName
+from client
+         join application a on client.idClient = a.Client_idClient
+group by idClient, FirstName, LastName;
+
+
+#
+# 12. Найти наибольший и наименьший кредиты.
+select * from client join application a on client.idClient = a.Client_idClient where Sum = (select max(Sum) from application);
+select * from client join application a on client.idClient = a.Client_idClient where Sum = (select min(Sum) from application);
+#
+
+# 13. Подсчитать количество кредитов для клиентов, которые имеют высшее образование.
+select count(Sum) as countSum, FirstName from application join client c on c.idClient = application.Client_idClient where Education = 'high' group by FirstName;
+#
+
+
+# 14. Вывести данные про клиента, у которого наибольшая средняя сумма кредитов.
+
+ select avg(Sum) as avgSum, client.*
+ from client join application a on client.idClient = a.Client_idClient
+ group by idClient
+ order by avgSum
+ desc limit 1;
+
+# 15. Вывести отделение, которое выдало в кредити больше всего денег.
+select sum(Sum) as sum, idDepartment, DepartmentCity
+from department
+join client c on department.idDepartment = c.Department_idDepartment
+join application a on c.idClient = a.Client_idClient
+group by DepartmentCity, idDepartment
+order by sum desc;
+
+
+# 16. Вывести отделение, которое выдало самый большой кредит.
+select sum(Sum) as maxSum, idDepartment, DepartmentCity from department
+join client c on department.idDepartment = c.Department_idDepartment
+join application a on c.idClient = a.Client_idClient
+group by idDepartment, DepartmentCity order by maxSum desc limit 1;
+#
+# 17. Все клиентам, которые имею высшее образование, установить все их кредити в размене 6000грн.
+update application
+join client c on c.idClient = application.Client_idClient
+set Sum = 6000
+where Education = 'high';
+select *from application;
+#
+# 18. Всех клиентов киевских отделений пересилить в Киев.
+update client
+join department d on d.idDepartment = client.Department_idDepartment
+set City = 'Kiyv'
+where DepartmentCity = 'Kiyv';
+select *
+from client;
+
+# 19. Удалить все возвращенные кредити.
+delete
+from application
+where CreditState = 'Returned';
+#
+# 20. Удалить кредити клиентов, у которых вторая буква фамилии гласная.
+delete application
+from application join client c on c.idClient = application.Client_idClient
+where
+    LastName like '_y%' or
+    LastName like '_e%' or
+    LastName like '_u%' or
+    LastName like '_o%' or
+    LastName like '_a%';
+#
+# 21. Найти львовские отделения, которые выдали кредитов на общую сумму больше чем 5000
+#
+select sum(Sum) as credit, DepartmentCity,idDepartment
+from department
+join client c on department.idDepartment = c.Department_idDepartment
+join application a on c.idClient = a.Client_idClient
+where DepartmentCity = 'lviv'
+group by DepartmentCity, idDepartment
+having sum(Sum) > 5000;
+# 22. Найти клиентов, которые погасили кредиты на сумму больше чем 5000
+select FirstName,LastName,Sum,CreditState from client
+join application a on client.idClient = a.Client_idClient
+where CreditState = 'Returned'
+and Sum > 5000;
+
+#
+# 23. Найти наибольший невозвращенный кредит.
+select *
+from application
+where Sum = (select max(Sum) from application)
+and CreditState = 'Not returned';
+
+# or
+# select application.*
+# from application
+# where CreditState = 'Not returned'
+# order by Sum desc
+# limit 1;
+
+# 24. Найти клиента с наименьшей суммой кредита
+select client.*, Sum
+from client join application a on client.idClient = a.Client_idClient
+where Sum = (select min(Sum) from application);
+
+#or
+
+select client.*, Sum
+from client
+join application a on client.idClient = a.Client_idClient
+order by Sum
+limit 1;
+#
+# 25. Найти кредиты, сумма которых больше за среднее арифметическое всех кредитов.
+select * from application
+where Sum > (select avg(Sum) from application);
+
+# 26. Найти клиентов с того же самого города, что и клиент который взял наибольшее количество кредитов.
+select *
+from client join application a on client.idClient = a.Client_idClient
+where City = (
+select city from client join application a2 on client.idClient = a2.Client_idClient where Sum = (
+select max(Sum) from application));
+
+select * from client
+where City = (
+    select city from client join application a on client.idClient = a.Client_idClient
+    group by idClient
+    order by count(idApplication)
+    desc limit 1
+    );
+
+#
+# 27. Найти город клиента с самим большим количеством кредитов.
+select client.* from client
+join application a on client.idClient = a.Client_idClient
+group by idClient
+order by count(idApplication)
+desc limit 1;

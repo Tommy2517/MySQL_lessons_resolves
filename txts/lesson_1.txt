@@ -1,0 +1,133 @@
+##############################Lesson_1##############################
+
+use qwerty223; #выбираем какую базу будем использовать
+
+#select * from cars; #показываем всё из таблицы cars
+
+#select * from users; #показываем всё из таблицы users
+
+# создаем таблицу:
+create table users
+(
+    id     int         not null auto_increment primary key,
+    name   varchar(25) not null,
+    age    int         not null,
+    gender varchar(6)  not null
+);
+#типы данных в таблице
+# int - простые числа
+# bigint - огромные числа
+# float - числа  с точкой
+# varchar - текст объемом до 255 симв. (колво. симв.)
+# text - очень боьшой текст
+
+#характеристики данных в таблице
+# not null - в поле нельзя записать null
+# auto_increment - каждое номое поле автоматически увеличивается
+# primary key - главный ключ по которому ищем быстрее (id)
+################################################################
+
+#Наполнение таблицы
+# insert into 'table' что то будем записывать в таблицу
+# values (,,,) в скобках указываем значения полей по порядку
+
+insert into users
+values (null, 'Art', 25, 'Male');
+
+select *
+from users;
+# * - выводит всю инфу все поля >
+# id, age - выводит только указанные поля >
+# from - из, откуда запрашиваем >>
+# where - условие запроса (where id = 2)
+#>>> and - добавить условие (where gender = 'male' and age = 30)
+#>>> or - логическое 'или'
+select * # выбираем всё
+from users # из "users"
+where gender = 'female' # которое имеет в поле gender = female
+    and age > 30 # и в тоже время age больше 30ти
+   or gender = 'male' # или которое имеет поле gender = male
+    and age > 30;
+# и возраст больше 30ти
+
+################################################################
+#запрос like - более гибкий кейс условий
+select *
+from users
+where name like '%o%'; #- о в любом месте; %o - заканчиваются на о; о% - начинаются на о;
+select *
+from users where name like '__e%'; #пропускает 2 символа находит слова с буквой е
+
+select *
+from users where age != 30; # логические сравнения = ; !=; >=; >\<;
+select *
+from users where age between 20 and 30; #between - промежуток от и до
+select *
+from users where age >= 20 and age >= 30; #between - промежуток от и до
+
+select *
+from users where age not between 20 and 30; #not between - все кроме промежуток от и до
+select *
+from users where age in (20,30,25); #in - только указанные в скобках
+select *
+from users where age not in (20,30,25); #not in - указанные в скобках не выводить
+
+select *
+from users where length(name) > 4;#даст имена в которых больше 4 символов
+
+################################################################
+
+#Сортировка
+select *
+from users order by age asc;#сортирует по порядку от меньшего к большему
+
+select *
+from users order by  age desc;#сортирует в обратном порядке
+
+select *
+from users order by  age desc limit 3; #сортирует в обратном порядке отдает первые 3
+
+select *
+from users order by  age desc limit 3 offset 2; #сортирует в обратном порядке, пропускает 2 значения, отдает 3
+
+
+################################################################
+#агригатные функции
+# mind(); max(); avg(); sum(); count().
+select max(age) as maxAge from users; #находит объект с максимальным значением характеристики age
+select min(age) as minAge from users; #минимальный age
+select avg(age) as avgAge from users; #среднее арифметическое значение
+select sum(age) as sumAge from users; #общая сумма значений полей age
+select count(age) as countAge from users; #количество значений age
+# * = все поля
+# as = присваивает имя полю
+
+select max(length(name)) as max from users;
+select * from users order by length(name) desc limit 4;
+
+
+################################################################
+#Группирование
+
+select count(*), gender as count #выбрать всё отобрать значения гендер и сложить по названиям в одно поле count
+from users group by gender; #из юзеров сгруппировать по гендеру
+
+select avg(age) as age, gender from users where age > 20 group by gender;
+
+select count(*) as count, #выбираем количество(всех) значений и даем имя count
+       model from cars    # значения таблицы model из таблицы cars
+             where year > 2015 # значения которые имеют в колонке year больше 2015
+             group by model #группируем по model
+             having count>1; #haveing - то же самое что и where только where нельзя использовать после групировки
+
+select * from cars where model='bmw';
+
+delete #удаляет обьект
+from cars # из таблицы cars
+where id = 55; # который имеет ia = 55
+
+select * from cars;
+
+update cars  #изменяет
+set year = 1 # значение ячейки year на 9999
+where year<2015 # в тех объектах где значение year > 2015w

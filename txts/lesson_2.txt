@@ -1,0 +1,46 @@
+# distinct - показывает в таблице какие есть имена, без повторов
+select distinct name from users;
+
+# union - объеденяет несколько запросов в один
+select max(age) from users
+union
+select min(age) from users;
+
+# объединяем данные с разных таблиц ########################
+# создаем новую таблицу городов
+create table cities
+(
+    id int primary key auto_increment not null ,
+    city varchar(20) not null
+);
+
+#создаем новых пользователей
+create table users2
+(
+    id int not null auto_increment primary key ,
+    name varchar(20) not null ,
+    age int not null ,
+    city_id int null ,
+    # foreign key к какому полю будет привязан id из ссылки
+    foreign key (city_id) references cities(id)
+);
+
+# join - присоединить таблицы
+select users2.* from users2 # берем таблицу users2
+join cities c on c.id = users2.city_id # присоединяем таблицу с городами
+# присоединят поля в тех местах где id cities = city_id из users2
+where city = 'Lviv';
+
+# left join - дает приоритет информации с левой таблицы, показывает даже те поля для которых нет совпадений по id
+select *
+from users2 left join cities c on c.id = users2.city_id;
+
+# right join - дает приоритет правой таблице
+select * from users2 right join cities c on c.id = users2.city_id;
+
+
+# Удаление - delete удаление из одной таблицы ссылаясь на информацию из другой
+delete users2
+from users2
+join cities c on c.id = users2.city_id
+where users2.age = 15 and city='kyiv';

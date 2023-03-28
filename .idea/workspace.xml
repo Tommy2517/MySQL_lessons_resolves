@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d2594eb-d96d-4ef1-9a9b-42e526160a8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySQL_lessons_resolves.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txts/lesson_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txts/lesson_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txts/resolves_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/txts/resolves_2.txt" afterDir="false" />
+    <list default="true" id="4d2594eb-d96d-4ef1-9a9b-42e526160a8a" name="Changes" comment="finish my sql">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NedI2h0L7BEtdlsLGKA6sgh8AE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -46,11 +44,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680028400486</updated>
-      <workItem from="1680028401690" duration="302000" />
+      <workItem from="1680028401690" duration="1096000" />
     </task>
+    <task id="LOCAL-00001" summary="finish my sql">
+      <created>1680028851064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680028851064</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finish my sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish my sql" />
   </component>
 </project>

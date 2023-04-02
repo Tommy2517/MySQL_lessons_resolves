@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d2594eb-d96d-4ef1-9a9b-42e526160a8a" name="Changes" comment="finish my sql">
+      <change afterPath="$PROJECT_DIR$/MongoDb/Lesson_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MongoDb/lesson_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MongoDb/resolves_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL_lessons_resolves.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL_MongoDB_Lessons.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txts/lesson_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/lesson_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txts/lesson_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/lesson_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txts/lesson_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/lesson_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txts/resolves_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/resolves_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txts/resolves_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/resolves_2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/MySQL_lessons_resolves&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,7 +58,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680028400486</updated>
-      <workItem from="1680028401690" duration="1096000" />
+      <workItem from="1680028401690" duration="1123000" />
+      <workItem from="1680170462626" duration="4169000" />
+      <workItem from="1680340024053" duration="594000" />
+      <workItem from="1680352450264" duration="1194000" />
+      <workItem from="1680426543873" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="finish my sql">
       <created>1680028851064</created>
@@ -53,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680028851064</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finish my sql">
+      <created>1680033045256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680033045256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
